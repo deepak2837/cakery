@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<head>
+    <title>login</title>
+    <style>
+        body {
+            background-image: url("pexels-photo-4173624.jpeg");
+            background-repeat: no-repeat;
+           
+            background-size: cover;
+        }
+        .login {
+            color:black;
+            float: center;
+            margin: auto;
+            border: 6px groove black;
+            padding: 100px;
+            max-width: 140px;
+            max-height: 600px;
+        }
+        a {
+            color: lightskyblue;
+        }
+        .btn {
+            display: inline-block;
+            padding: 0.35em 1.2em;
+            border: 0.1em solid #FFFFFF;
+            margin: 0 0.3em 0.3em 0;
+            border-radius: 05px;
+            box-sizing: border-box;
+            text-decoration: none;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 300;
+            color: #FFFFFF;
+            text-align: center;
+            transition: all 0.2s;
+        }
+
+        .btn:hover {
+            color: #000000;
+            background-color: #FFFFFF;
+        }
+        form{height: 190px;
+        width:240px;}
+     
+    </style>
+</head>
+
+<body>
+    <div class="login" >
+        <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color:black;">Login</h1>
+        <form method ="post" action="/login">
+            {% csrf_token %}
+            <label for="email">Email</label><br>
+            <input type="text" name="email" placeholder="eg: xyz@something.com" class="email" id="email" required><br>
+            <label for="pass">Password</label><br>
+            <input type="password" name ="password" placeholder="*******" class="pass" id="pass" required><br>
+            <a href="##forgotpass">Forgot password?</a><br><br>
+            <button type="submit" >Login</button>
+            dont have an account?
+            <button type="submit" method="post" action="/register" >Register</button>
+            {% comment %} <a href="reg.html" class="btn">Register</a>&nbsp;
+            <a href="menu.html" class="btn">Login</a> {% endcomment %}
+        </form>
+    </div>
+</body>
+
+</html>
